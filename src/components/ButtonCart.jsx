@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ButtonCart () {
-    return (
-        <a href="/cart.html" className="button button--cart">
-        <span>520 ₽</span>
+function ButtonCart(){
+    return(
+        <>
+          <span>520 ₽</span>
         <div className="button__delimiter"></div>
         <svg
           width="18"
@@ -33,10 +33,10 @@ function ButtonCart () {
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-        </svg>
-        <span>3</span>
-      </a>
-    );
+              </svg>
+              <span>3</span>
+        </>
+    )
 }
 
 export default ButtonCart;

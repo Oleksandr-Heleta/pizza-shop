@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './assets/img/pizza-logo.svg';
-import ButtonCart from './ButtonCart'
+import logo from '../assets/img/pizza-logo.svg';
+import {Button, ButtonCart}  from './index';
+
 
 function Header (){
     return (
@@ -14,7 +15,12 @@ function Header (){
             </div>
           </div>
           <div className="header__cart">
-           <ButtonCart/>
+            <Button 
+              onClick={()=>{alert(123)}}
+              className="button--cart"
+            >
+              <ButtonCart/>
+            </Button> 
           </div>
         </div>
         </div>
