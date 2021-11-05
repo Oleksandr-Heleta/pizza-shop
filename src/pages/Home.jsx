@@ -9,7 +9,9 @@ function Home({items}) {
           onClick={(name) => {}}
           items={['Meat', 'Vagetarian', 'Gril', 'Hot', 'Calsone']}
         />
-        <Sort items={['popular', 'price', 'alphabet']} />
+        <Sort items={[{name:'popular', type: 'popular'},
+          {name:'price', type: 'price'},
+          {name:'alphabet', type: 'alphabet'}]} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
