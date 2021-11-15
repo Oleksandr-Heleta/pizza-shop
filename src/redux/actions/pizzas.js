@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const urlDb = 'http://localhost:3001/pizzas';
+const urlDb = '/pizzas';
 
 export const setLoaded = (payload) =>({
     type: 'SET_LOADED',

@@ -33,7 +33,6 @@ function Home() {
   }, []);
 
   const onAddPizza = React.useCallback((pizzaObj) => {
-    // console.log(pizzaObj);
     dispatch(addPizzaToCart(pizzaObj));
   }, []);
 
@@ -53,7 +52,10 @@ function Home() {
           ? items.map((obj) => (
               <PizzaBlock
                 onAddPizza={onAddPizza}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                addedCount={
+                  cartItems[obj.id] &&
+                  cartItems[obj.id].reduce((sum, obj) => obj.totalCount + sum, 0)
+                }
                 key={obj.id}
                 {...obj}
               />
