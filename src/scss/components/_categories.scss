@@ -1,8 +1,11 @@
 @import '../variables';
 
 .categories {
+  width: 65%;
+
   ul {
     display: flex;
+    overflow: auto;
 
     li {
       background-color: #f9f9f9;

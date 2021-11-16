@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-  width: calc(100vw - 100px);
+  width: 95vw;
   height: 100%;
   background-color: #fff;
   margin: 50px auto;
@@ -27,7 +27,7 @@ body {
   &__items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
   }
 
   &__top {
@@ -275,7 +275,7 @@ body {
 
   &--empty {
     margin: 0 auto;
-    width: 560px;
+    max-width: 560px;
     text-align: center;
 
     h2 {
