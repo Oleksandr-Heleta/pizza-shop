@@ -78,6 +78,7 @@ body {
   &__clear {
     display: flex;
     align-items: center;
+    padding-left: 10px;
     cursor: pointer;
     @include noselect();
 
@@ -107,17 +108,27 @@ body {
   }
 
   &__item {
-    display: flex;
+    // display: flex;
+    // flex-wrap: wrap;
     width: 100%;
     border-top: 1px solid $gray-line;
-    padding-top: 30px;
-    margin-top: 30px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+    &-group {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &-amount {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 10px;
+    }
 
     &-img {
       display: flex;
       align-items: center;
-      margin-right: 15px;
-      width: 10%;
 
       img {
         width: 80px;
@@ -129,7 +140,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40%;
+      margin-left: 15px;
 
       h3 {
         font-weight: bold;
@@ -148,7 +159,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 13%;
 
       &-minus {
         svg {
@@ -159,6 +169,9 @@ body {
       }
 
       b {
+        text-align: center;
+        width: 30px;
+        padding: 0 3px;
         font-size: 22px;
       }
     }
@@ -167,9 +180,11 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 33%;
+      padding: 0 3px;
 
       b {
+        text-align: center;
+        width: 100px;
         font-weight: bold;
         font-size: 22px;
         letter-spacing: 0.01em;
@@ -180,7 +195,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 4%;
 
       .button {
         border-color: darken($color: $gray-line, $amount: 10);
@@ -268,7 +282,6 @@ body {
         font-size: 16px;
         font-weight: 600;
         width: 210px;
-        padding: 16px;
       }
     }
   }

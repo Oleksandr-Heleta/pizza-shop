@@ -66,6 +66,9 @@ const cart = (state = initialState, action) => {
                 ...state.items,
                 [action.payload.id]: filterItems
             };
+            if (newItems[action.payload.id].length < 1) {
+                delete newItems[action.payload.id];
+            }
             const sumAndCount = getSumAndCount(newItems)
             return {
                ...state,
@@ -90,8 +93,12 @@ const cart = (state = initialState, action) => {
             if (remoweInItems[ind].totalCount < 1)  {remoweInItems.splice(ind, 1)} ;
             const newItems = {
                 ...state.items,
-                [action.payload.id]: remoweInItems
+                [action.payload.id]: remoweInItems,
             };
+            
+            if (newItems[action.payload.id].length < 1) {
+                delete newItems[action.payload.id];
+            }
             const sumAndCount = getSumAndCount(newItems)
             return {
                ...state,
