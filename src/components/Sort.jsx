@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const Sort = React.memo(function Sort({ items, activeSortType, onClickSortType }) {
@@ -40,7 +39,7 @@ const Sort = React.memo(function Sort({ items, activeSortType, onClickSortType }
               fill="#2C2C2C"
             />
           </svg>
-          <b>Сортировка по:</b>
+          <b>Sort by:</b>
         </div>
         <span>{activeLable}</span>
       </div>

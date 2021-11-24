@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function ButtonCart() {
-  const dispatch = useDispatch();
   const { totalPrice, totalCount } = useSelector(({ cart }) => ({
     totalPrice: cart.totalPrice,
     totalCount: cart.totalCount,
@@ -10,7 +9,7 @@ function ButtonCart() {
 
   return (
     <>
-      <span>$ {totalPrice}</span>
+      <span>{totalPrice} uah</span>
       <div className="button__delimiter"></div>
       <svg
         width="18"

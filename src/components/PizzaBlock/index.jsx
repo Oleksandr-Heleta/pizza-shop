@@ -1,10 +1,20 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
 import Button from '../Button';
 
-function PizzaBlock({ id, name, imageUrl, price, types, sizes, onAddPizza, addedCount }) {
-  const avalibleTypes = ['slim', 'tradition'];
+const PizzaBlock = React.memo(function PizzaBlock({
+  id,
+  name,
+  imageUrl,
+  price,
+  types,
+  sizes,
+  onAddPizza,
+  addedCount,
+}) {
+  const avalibleTypes = ['Standard', 'Thin'];
   const avalibleSizes = [26, 30, 40];
   const [activeType, setActiveType] = React.useState(types[0]);
   const [activeSize, setActiveSize] = React.useState(sizes[0]);
@@ -62,7 +72,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onAddPizza, added
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">$ {price}</div>
+        <div className="pizza-block__price">{price} uah</div>
         <Button onClick={onClickAddPizza} className="button--add" outline>
           <svg
             width="12"
@@ -75,13 +85,13 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onAddPizza, added
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
+          <span>Add</span>
           {addedCount && <i>{addedCount}</i>}
         </Button>
       </div>
     </div>
   );
-}
+});
 
 PizzaBlock.propTypes = {
   name: PropTypes.string.isRequired,

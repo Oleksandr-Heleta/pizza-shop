@@ -21,19 +21,20 @@ const cart = (state = initialState, action) => {
             }
             const nextItem = () =>{
                 let flag = false;
-                state.items[action.payload.id].map(obj => {
+                const modItemsArr = state.items[action.payload.id].map(obj => {
                     if (obj.type === action.payload.type && obj.size === action.payload.size ) { 
                         flag = true;
                         obj.totalCount += 1;
                         obj.totalPrice += obj.price;
                         return  obj;
-                       }   
+                       } 
+                    return  obj;  
                 });
                 
                   return !flag ? [
                     ...state.items[action.payload.id],
                     firstItem
-                  ] : state.items[action.payload.id]
+                  ] : modItemsArr;
             }
             const newItems = {
                 ...state.items,

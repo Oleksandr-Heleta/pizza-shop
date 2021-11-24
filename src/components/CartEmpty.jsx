@@ -6,16 +6,16 @@ function CartEmpty() {
   return (
     <div className="cart cart--empty">
       <h2>
-        Корзина пустая <icon>😕</icon>
+        The cart is empty <span>😕</span>
       </h2>
       <p>
-        Вероятней всего, вы не заказывали ещё пиццу.
+        You have not ordered any pizzas.
         <br />
-        Для того, чтобы заказать пиццу, перейди на главную страницу.
+        To order pizzas go to main page.
       </p>
       <img src={emptyCartiImg} alt="Empty cart" />
       <Link to="/" className="button button--black">
-        <span>Вернуться назад</span>
+        <span>Go back</span>
       </Link>
     </div>
   );

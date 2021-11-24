@@ -6,7 +6,7 @@ import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchPizzas } from '../redux/actions/pizzas';
 import { addPizzaToCart } from '../redux/actions/cart';
 
-const categories = ['Meat', 'Vagetarian', 'Gril', 'Hot', 'Calsone'];
+const categories = ['Meat', 'Vegetarian', 'Gril', 'Hot', 'Calzone'];
 const sortItems = [
   { name: 'popular', type: 'rating', order: 'desc' },
   { name: 'price', type: 'price', order: 'desc' },
@@ -40,13 +40,13 @@ function Home() {
     <div className="container">
       <div className="content__top">
         <Categories
-          activeCategory={category}
           onClickCategory={onSelectCategory}
+          activeCategory={category}
           items={categories}
         />
-        <Sort activeSortType={sortBy.type} items={sortItems} onClickSortType={onSelectSortType} />
+        <Sort onClickSortType={onSelectSortType} activeSortType={sortBy.type} items={sortItems} />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">Pizzas:</h2>
       <div className="content__items">
         {isLoaded
           ? items.map((obj) => (
