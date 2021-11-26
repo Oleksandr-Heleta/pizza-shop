@@ -61,7 +61,7 @@ const cart = (state = initialState, action) => {
 
         case 'REMOVE_CART_ITEM':  {
             const filterItems = state.items[action.payload.id].filter(obj => 
-                obj.type !== action.payload.type && obj.size !== action.payload.size 
+                !(obj.type === action.payload.type && obj.size === action.payload.size) 
             );
             const newItems = {
                 ...state.items,
